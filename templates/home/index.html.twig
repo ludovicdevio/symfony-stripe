@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mb-3">
+            {% for product in products %}
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <img src="{{ product.images[0] }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <a href="{{ path('app_buy_product', {'id':product.id})}}" class="btn btn-primary">Acheter</a>
+                            <a href="{{ path('app_add_to_cart', {'id':product.id})}}" class="btn btn-info">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <a href="{{ path('app_buy_cart') }}" class="btn btn-primary">Acheter l'ensemble du panier</a>
+        </div>
+    </div>
+{% endblock %}
