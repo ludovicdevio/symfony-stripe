@@ -1,0 +1,72 @@
+{# filepath: templates/home/cart.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="my-4">Votre panier</h1>
+    
+    {% if cart.products|length > 0 %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Prix unitaire</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in cart.products %}
+                    <tr>
+                        <td>
+                            {% if product.image %}
+                                <img src="{{ product.image }}" alt="{{ product.name }}" style="max-width: 50px; max-height: 50px;" class="me-2">
+                            {% endif %}
+                            {{ product.name }}
+                        </td>
+                        <td>{{ product.unitPrice|number_format(2, ',', ' ') }} €</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.totalPrice|number_format(2, ',', ' ') }} €</td>
+                        <td>
+                            <a href="{{ path('app_remove_from_cart', {'id': product.id}) }}" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i> Supprimer
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="table-info">
+                        <td colspan="3" class="text-end"><strong>Total</strong></td>
+                        <td><strong>{{ cart.total|number_format(2, ',', ' ') }} €</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="d-flex justify-content-between my-4">
+            <a href="{{ path('app_home') }}" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Continuer mes achats
+            </a>
+            <div>
+                <a href="{{ path('app_clear_cart') }}" class="btn btn-warning me-2">
+                    <i class="bi bi-cart-x"></i> Vider le panier
+                </a>
+                <a href="{{ path('app_buy_cart') }}" class="btn btn-success">
+                    <i class="bi bi-cash"></i> Procéder au paiement
+                </a>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            <p>Votre panier est vide.</p>
+            <a href="{{ path('app_home') }}" class="btn btn-primary">
+                <i class="bi bi-arrow-left"></i> Retour aux produits
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -8,10 +8,10 @@ use Stripe\Stripe;
 use Stripe\StripeClient;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Stripe\Product;
+use Stripe\Exception\ApiErrorException;
 
 class StripeService
 {
-
   private StripeClient $Client;
 
   public function __construct(#[Autowire('%env(STRIPE_API_KEY)%')]  string $apiKey)
@@ -21,37 +21,53 @@ class StripeService
 
   /**
    * @return Product[]
-   * @throws \Stripe\Exception\ApiErrorException
+   * @throws ApiErrorException
    */
   public function getActiveProducts(): array
   {
     return $this
-    ->Client
-    ->products
-    ->all(['active' => true])
-    ->data;
+      ->Client
+      ->products
+      ->all(['active' => true])
+      ->data;
   }
 
+  /**
+   * @throws ApiErrorException
+   */
   public function findOneProduct(string $productId): Product
   {
     return $this->Client->products->retrieve($productId);
   }
 
+  /**
+   * @throws ApiErrorException
+   */
   public function getLastActivePrice(Product $product): ?Price
   {
-    return $this->Client->prices->all([
+    $prices = $this->Client->prices->all([
       'product' => $product->id,
       'active' => true,
       'limit' => 1
-    ])->data[0] ?? null;
+    ])->data;
+    
+    return $prices[0] ?? null;
   }
 
-  public function getCartBuyUrl(Cart $cart): string
+  /**
+   * @throws ApiErrorException
+   */
+  public function getCartBuyUrl(Cart $cart, string $successUrl, string $cancelUrl): string
   {
     $lineItems = [];
-    foreach ($cart->products as $cartProduct){
+    foreach ($cart->products as $cartProduct) {
         $product = $this->findOneProduct($cartProduct->id);
         $price = $this->getLastActivePrice($product);
+        
+        if (!$price) {
+            throw new \RuntimeException("Le prix du produit {$product->name} est indisponible");
+        }
+        
         $lineItems[] = [
           'price_data' => [
             'currency' => 'eur',
@@ -64,19 +80,27 @@ class StripeService
           'quantity' => $cartProduct->quantity,
         ];
     }
+    
     return $this->Client->checkout->sessions->create([
       'payment_method_types' => ['card'],
       'line_items' => $lineItems,
       'mode' => 'payment',
-      'success_url' => 'https://localhost',
-      'cancel_url' => 'https://localhost',
+      'success_url' => $successUrl,
+      'cancel_url' => $cancelUrl,
     ])->url;
   }
 
-
-  public function getProductBuyUrl(Product $product, int $quantity = 1): string
+  /**
+   * @throws ApiErrorException
+   */
+  public function getProductBuyUrl(Product $product, int $quantity = 1, string $successUrl, string $cancelUrl): string
   {
     $price = $this->getLastActivePrice($product);
+    
+    if (!$price) {
+        throw new \RuntimeException("Le prix du produit {$product->name} est indisponible");
+    }
+    
     return $this->Client->checkout->sessions->create([
       'payment_method_types' => ['card'],
       'line_items' => [
@@ -93,8 +117,8 @@ class StripeService
         ],
       ],
       'mode' => 'payment',
-      'success_url' => 'https://localhost',
-      'cancel_url' => 'https://localhost',
+      'success_url' => $successUrl,
+      'cancel_url' => $cancelUrl,
     ])->url;
   }
 }
