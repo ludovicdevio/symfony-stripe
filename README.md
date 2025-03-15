@@ -50,7 +50,7 @@ L'application est construite sur une architecture MVC avec les technologies suiv
 
 1. **Cloner le dépôt**
    ```bash
-   git clone [https://github.com/ludovicdevio/symfony-stripe]
+   git clone https://github.com/ludovicdevio/symfony-stripe
    cd symfony-stripe-redis
    ```
 
@@ -101,7 +101,7 @@ Le projet utilise les variables d'environnement suivantes :
 | `APP_SECRET` | Clé secrète pour la sécurité | `4a8050593dbd7630482adbe8345d2c17` |
 | `STRIPE_API_KEY` | Clé privée Stripe | `sk_test_51R14ka...` |
 | `STRIPE_PUBLIC_KEY` | Clé publique Stripe | `pk_test_51R14ka...` |
-| `REDIS_URL` | URL de connexion Redis | `redis://127.0.0.1:6379` |
+| `REDIS_URL` | URL de connexion Redis | `redis://password@127.0.0.1:6379` |
 
 ### Configuration Redis
 
