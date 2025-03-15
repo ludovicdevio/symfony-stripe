@@ -1,14 +1,5 @@
 # Documentation du projet Symfony-Stripe-Redis
 
-## Table des matières
-1. Vue d'ensemble
-2. Architecture technique
-3. Installation
-4. Configuration
-5. Fonctionnalités
-6. Structure du code
-7. API et intégrations
-8. Tests
 
 
 ---
