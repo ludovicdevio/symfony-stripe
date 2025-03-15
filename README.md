@@ -1,9 +1,5 @@
 # Documentation du projet Symfony-Stripe-Redis
 
-
-
----
-
 ## Vue d'ensemble
 
 Cette application est une boutique en ligne développée avec le framework Symfony 7.2. Elle permet d'afficher des produits provenant de l'API Stripe et offre deux parcours d'achat principaux : soit l'achat direct d'un produit, soit l'ajout au panier puis le paiement groupé. L'application utilise Redis pour la gestion des sessions et le stockage des paniers.
