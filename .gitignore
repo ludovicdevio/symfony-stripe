@@ -39,6 +39,3 @@ phpstan.neon
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
-/tests
-/.php-cs-fixer.dist.php
-/phpstan.dist.neon
