@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Entity;
+
 use Talleu\RedisOm\Om\Mapping as RedisOm;
 
 #[RedisOm\Entity]
-Class Cart
+class Cart
 {
     #[RedisOm\Id]
     #[RedisOm\Property]

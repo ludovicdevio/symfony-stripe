@@ -5,7 +5,7 @@ namespace App\Entity;
 use Talleu\RedisOm\Om\Mapping as RedisOm;
 
 #[RedisOm\Entity]
-Class CartProduct
+class CartProduct
 {
     #[RedisOm\Id]
     #[RedisOm\Property]
