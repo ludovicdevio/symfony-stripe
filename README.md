@@ -266,4 +266,13 @@ Les tests utilisent des classes de test spécifiques comme `TestableStripeServic
 
 ---
 
+![alt text](s1.png)
+
+![alt text](S2.png)
+
+![alt text](s3.png)
+
+![alt text](s4.png)
+
+
 Cette documentation fournit une vue d'ensemble complète de l'application Symfony-Stripe-Redis. Pour toute question ou clarification, n'hésitez pas à contacter l'équipe de développement.
