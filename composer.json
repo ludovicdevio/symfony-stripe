@@ -14,7 +14,7 @@
     "phpdocumentor/reflection-docblock": "^5.6.1",
     "phpstan/phpdoc-parser": "^2.1",
     "stripe/stripe-php": "^16.6",
-    "symfony/apache-pack": "^1.0",
+    "symfony/apache-pack": "^1.0.1",
     "symfony/asset": "7.2.*",
     "symfony/asset-mapper": "7.2.*",
     "symfony/console": "7.2.*",
@@ -45,7 +45,7 @@
     "symfony/web-link": "7.2.*",
     "symfony/webpack-encore-bundle": "^2.2",
     "symfony/yaml": "7.2.*",
-    "talleu/php-redis-om": "^0.3.4",
+    "talleu/php-redis-om": "dev-main",
     "twig/extra-bundle": "^2.12|^3.20",
     "twig/twig": "^2.12|^3.20"
   },
@@ -107,8 +107,8 @@
     }
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^3.72",
-    "phpstan/extension-installer": "^1.4",
+    "friendsofphp/php-cs-fixer": "^3.73.1",
+    "phpstan/extension-installer": "^1.4.3",
     "phpunit/phpunit": "^9.6.22",
     "symfony/browser-kit": "7.2.*",
     "symfony/css-selector": "7.2.*",

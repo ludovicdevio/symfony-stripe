@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d45629e28dd4a6b20924aed1189a2ba9",
+    "content-hash": "2146f889ccf93dbe86d9fe25bbfdfca5",
     "packages": [
         {
             "name": "composer/semver",
@@ -1303,16 +1303,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "b115554301161fa21467629f1e1391c1936de517"
+                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b115554301161fa21467629f1e1391c1936de517",
-                "reference": "b115554301161fa21467629f1e1391c1936de517",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
+                "reference": "d42c8731f0624ad6bdc8d3e5e9a4524f68801cfa",
                 "shasum": ""
             },
             "require": {
@@ -1358,7 +1358,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/4.0.3"
+                "source": "https://github.com/egulias/EmailValidator/tree/4.0.4"
             },
             "funding": [
                 {
@@ -1366,7 +1366,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-27T00:36:43+00:00"
+            "time": "2025-03-06T22:45:56+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7507,16 +7507,16 @@
         },
         {
             "name": "talleu/php-redis-om",
-            "version": "v0.3.4",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clementtalleu/php-redis-om.git",
-                "reference": "92f2089ccf3c222e3ec662f8ec58d78de9c2b8e6"
+                "reference": "a3807064fcea21dcd34000789d49ef272768b527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clementtalleu/php-redis-om/zipball/92f2089ccf3c222e3ec662f8ec58d78de9c2b8e6",
-                "reference": "92f2089ccf3c222e3ec662f8ec58d78de9c2b8e6",
+                "url": "https://api.github.com/repos/clementtalleu/php-redis-om/zipball/a3807064fcea21dcd34000789d49ef272768b527",
+                "reference": "a3807064fcea21dcd34000789d49ef272768b527",
                 "shasum": ""
             },
             "require": {
@@ -7535,6 +7535,7 @@
                 "predis/predis": "To use Predis as a Redis PHP client",
                 "symfony/framework-bundle": "To use the provided bundle."
             },
+            "default-branch": true,
             "bin": [
                 "bin/redisMigration"
             ],
@@ -7557,9 +7558,9 @@
             "description": "A PHP object mapper library for Redis",
             "support": {
                 "issues": "https://github.com/clementtalleu/php-redis-om/issues",
-                "source": "https://github.com/clementtalleu/php-redis-om/tree/v0.3.4"
+                "source": "https://github.com/clementtalleu/php-redis-om/tree/main"
             },
-            "time": "2025-03-10T20:48:19+00:00"
+            "time": "2025-03-20T08:17:20+00:00"
         },
         {
             "name": "twig/extra-bundle",
@@ -8093,16 +8094,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.72.0",
+            "version": "v3.73.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "900389362c43d116fee1ffc51f7878145fa61b57"
+                "reference": "ffcb8200a42045e65049af7910cfd022f631b064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/900389362c43d116fee1ffc51f7878145fa61b57",
-                "reference": "900389362c43d116fee1ffc51f7878145fa61b57",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/ffcb8200a42045e65049af7910cfd022f631b064",
+                "reference": "ffcb8200a42045e65049af7910cfd022f631b064",
                 "shasum": ""
             },
             "require": {
@@ -8110,6 +8111,7 @@
                 "composer/semver": "^3.4",
                 "composer/xdebug-handler": "^3.0.3",
                 "ext-filter": "*",
+                "ext-hash": "*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "fidry/cpu-core-counter": "^1.2",
@@ -8184,7 +8186,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.72.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.73.1"
             },
             "funding": [
                 {
@@ -8192,7 +8194,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-13T11:25:37+00:00"
+            "time": "2025-03-19T23:42:16+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -11097,7 +11099,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "talleu/php-redis-om": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
